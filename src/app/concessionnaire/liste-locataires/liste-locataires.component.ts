@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AfficherListeUtilisateursService } from 'src/app/services/afficher-liste-utilisateurs.service';
+import { SupprimerLocataireService } from 'src/app/services/supprimer-locataire.service';
 
 @Component({
   selector: 'app-liste-locataires',
@@ -12,7 +14,7 @@ export class ListeLocatairesComponent {
 
   listeLocataires:any;
 
-  constructor(private listeClientService: AfficherListeUtilisateursService){
+  constructor(private listeClientService: AfficherListeUtilisateursService, private supprimerClientService:SupprimerLocataireService, private router: Router){
 
   }
 
@@ -25,5 +27,20 @@ console.log(this.listeLocataires);
     alert("Erreur lors de la récupération des clients");
   }
 })
+  }
+
+
+  supprimerLocataire(id:number){
+    if(confirm("Voulez vous vraiment supprimer le compte de ce locataire")){
+      this.supprimerClientService.supprimerLocataire(id).subscribe({
+        next:(results)=>{
+        alert("Utilisateur supprimé");
+        
+        },error:(err)=>{
+          alert("Echec de la suppression");
+        }
+            })
+    }
+ 
   }
 }

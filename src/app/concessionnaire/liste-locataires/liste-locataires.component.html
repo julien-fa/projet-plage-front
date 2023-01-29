@@ -12,6 +12,7 @@
                     <th>lien de parenté</th>
                     <th>pays</th>
                     <th>liste de locations</th>
+                    <th>Suppression locataire</th>
                     
                    
                 </tr>
@@ -25,6 +26,7 @@
                 <td>{{locataire.email}}</td>
                 <td>{{locataire.lienDeParente['nom']}}</td>
                 <td>{{locataire.pays['nom']}}</td>
+              
             
                 <td>
                     <ng-container  *ngFor="let location of locataire.listeLocationDto" >
@@ -33,6 +35,8 @@
                   
                          
                        </td>
+                       <td><button class="btn btn-secondary" (click)="supprimerLocataire(locataire.id)">Supprimer Locataire </button></td>
+
               </tr>
         
             </tbody>
