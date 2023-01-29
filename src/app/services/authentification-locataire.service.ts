@@ -10,6 +10,7 @@ export class AuthentificationLocataireService {
 
 url="http://localhost:8080/";
 
+
   authentifier(datas: any){
    return this.httpClient.post(this.url+"authentifierLocataire",datas);
   }
