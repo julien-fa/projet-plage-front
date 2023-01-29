@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { AuthentificationLocataireService } from '../services/authentification-locataire.service';
 
 @Component({
@@ -16,15 +17,17 @@ export class LocataireAuthentificationComponent {
   error:any;
 
 authentification(datas: any){
-this.authentificationService.authentifier(datas).subscribe({
+this.authentificationService.authentifier(datas.value).subscribe({
   next:(results)=>{
 console.log(results);
 alert("Connexion effective");
   }, error:(err)=>{
     this.error=err.error;
+    datas.reset();
     console.log(err);
   }
 })
 }
+
 
 }

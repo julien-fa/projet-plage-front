@@ -1,6 +1,6 @@
 <h4>Page d'authentification d'un locataire</h4>
 <div class="container" >
-    <form #f="ngForm" (ngSubmit)="authentification(f.value)">
+    <form #f="ngForm" (ngSubmit)="authentification(f)">
        
             <label for="email">Email :</label>
             <input #inputEmail="ngModel" type="email" id="email" ngModel name="email" class="form-control" required>
@@ -15,7 +15,7 @@
                 <p  *ngIf="inputMdp.errors?.['minlength']">Votre mot de passe doit contenir 8 caractères</p>
              
                       </div>
-        <button [disabled]="f.invalid">Authentification</button>
+        <button class="btn btn-primary" [disabled]="f.invalid">Authentification</button>
        <div *ngIf="error" class="alert alert-danger">
         {{error}}
        </div>
