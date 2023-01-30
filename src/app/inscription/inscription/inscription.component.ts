@@ -97,9 +97,14 @@ export class InscriptionComponent {
   //gestion des erreurs
   gestionErreurs(message: string): void {
     this.errormessage = message;
+    this.redirectionFormulaireInscription();
   }
 
   //méthode de redirection
-  redirectionFormulaireInscription() {}
-  redirectionAccueil() {}
+  redirectionFormulaireInscription() {
+    this.router.navigate(['/inscription']);
+  }
+  redirectionAccueil() {
+    this.router.navigate(['/']);
+  }
 }
