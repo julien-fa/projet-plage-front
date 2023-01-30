@@ -1,9 +1,18 @@
+import { LienDeParente } from './../model/LienDeParente';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LienDeParenteService {
 
-  constructor() { }
+  constructor(private client: HttpClient) {}
+
+  getAnnonce(annonceId: number): Observable<LienDeParente> {
+    return this.client.get<LienDeParente>(
+      `http://localhost:8080/api/`
+    );
+  }
 }

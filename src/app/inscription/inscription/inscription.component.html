@@ -1,25 +1,45 @@
-<form action="" method="POST">
+<div class="container">
+  <form action="" method="POST">
 
-  <div class="mb-3">
-    <label for="nom" class="form-label">Nom</label>
-    <input name="nom" type="text" class="form-control" id="nom">
-  </div>
-  <div class="mb-3">
-    <label for="prenom" class="form-label">Prénom</label>
-    <input name="prenom" type="text" class="form-control" id="prenom">
-  </div>
-  <div class="mb-3">
-    <label for="email" class="form-label">Courriel</label>
-    <input name="email" type="email" class="form-control" id="email">
-  </div>
-  <div class="mb-3">
-    <label for="password" class="form-label">Mot de passe</label>
-    <input name="password" type="password" class="form-control" id="password">
-  </div>
+    <div class="mb-3">
+      <label for="nom" class="form-label">Nom</label>
+      <input name="nom" type="text" class="form-control" id="nom">
+    </div>
+    <div class="mb-3">
+      <label for="prenom" class="form-label">Prénom</label>
+      <input name="prenom" type="text" class="form-control" id="prenom">
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Courriel</label>
+      <input name="email" type="email" class="form-control" id="email">
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Mot de passe</label>
+      <input name="password" type="password" class="form-control" id="password">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">Lien de parenté avec le concessionnaire: </label>
+      </div>
+      <select class="custom-select" id="inputGroupSelect01">
+        <option selected>Choisir</option>
+        <option value="frère/soeur">Frère/soeur</option>
+        <option value="cousin/cousine">Cousin</option>
+        <option value="aucun">Aucun lien</option>
+      </select>
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">Choisir votre pays: </label>
+      </div>
+      <select class="custom-select" id="inputGroupSelect01">
+        <option *ngFor="let pays of listePays" value="{{pays.nom}}">{{pays.nom}}</option>
+      </select>
+    </div>
 
-  <button type="submit" class="btn btn-primary">Valider votre inscription</button>
+    <button type="submit" class="btn btn-primary">Valider votre inscription</button>
 
-</form>
+  </form>
 
-<button (click)="redirectionAccueil()">Retour à la connexion</button>
-
+  <button (click)="redirectionAccueil()" class="btn btn-warning">Retour à la connexion</button>
+</div>
