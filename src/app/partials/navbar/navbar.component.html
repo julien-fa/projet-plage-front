@@ -4,19 +4,22 @@
   </li>
   <li class="nav-item">
     <a class="nav-link" routerLink="/authentificationLocataire" routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact : true}">Authentification Locataire</a>
+      [routerLinkActiveOptions]="{exact : true}" *ngIf="!localService.concessionnaireConnecte() && !localService.locataireConnecte()">Authentification Locataire</a>
   </li>
 
   <li class="nav-item">
     <a class="nav-link" routerLink="/authentificationConcessionnaire" routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact : true}">Authentification Concessionnaire</a>
+      [routerLinkActiveOptions]="{exact : true}" *ngIf="! localService.concessionnaireConnecte() && !localService.locataireConnecte()">Authentification Concessionnaire</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" routerLink="/listeLocataire" routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact : true}" *ngIf="localService.estConnecte()">Liste des locataires</a>
+      [routerLinkActiveOptions]="{exact : true}" *ngIf="localService.concessionnaireConnecte()">Liste des locataires</a>
   </li>
-  <li class="nav-item" *ngIf="localService.estConnecte()">
-    <a class="nav-link" (click)="deconnexion()">Deconnexion</a>
+  <li class="nav-item" *ngIf="localService.concessionnaireConnecte()">
+    <a class="nav-link" (click)="deconnexionConcessionnaire()">Deconnexion</a>
+  </li>
+  <li class="nav-item" *ngIf="localService.locataireConnecte()">
+    <a class="nav-link" (click)="deconnexionLocataire()">Deconnexion</a>
   </li>
 
 

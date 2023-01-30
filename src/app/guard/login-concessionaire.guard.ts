@@ -11,7 +11,7 @@ export class LoginConcessionaireGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
    
 
-    let token= sessionStorage.getItem('id');
+    let token= sessionStorage.getItem('idConcessionnaire');
     console.log(token);
 
     if(token) return true;

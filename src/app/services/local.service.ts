@@ -34,8 +34,13 @@ public clearData(){
   }
 
 
-  estConnecte(){
-    let token = sessionStorage.getItem('id');
+  concessionnaireConnecte(){
+    let token = sessionStorage.getItem('idConcessionnaire');
+    if(token) return true;
+    else return false;
+  }
+  locataireConnecte(){
+    let token = sessionStorage.getItem('idLocataire');
     if(token) return true;
     else return false;
   }

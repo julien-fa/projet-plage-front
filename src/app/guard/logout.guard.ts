@@ -12,10 +12,12 @@ export class LogoutGuard implements CanActivate {
 
   
   
-       let token= sessionStorage.getItem('id');
+       let token= sessionStorage.getItem('idConcessionnaire');
+       let token2= sessionStorage.getItem('idLocataire');
+
     console.log(token);
 
-    if(token) return false;
+    if(token || token2) return false;
     else return true;
   }
   

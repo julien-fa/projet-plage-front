@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { LoginConcessionaireGuard } from './guard/login-concessionaire.guard';
 import { TokenInterceptorProvider } from './tokeninterceptor.interceptor';
+import { ListeLocatairesComponent } from './concessionnaire/liste-locataires/liste-locataires.component';
 
 
 @NgModule({
@@ -23,10 +24,9 @@ import { TokenInterceptorProvider } from './tokeninterceptor.interceptor';
     AccueilComponent,
     NavbarComponent,
     FooterComponent,
-    NavbarComponent,
-    AccueilComponent,
     LocataireAuthentificationComponent,
     ConcessionnaireAuthentificationComponent,
+    ListeLocatairesComponent
   ],
   imports: [
     BrowserModule,

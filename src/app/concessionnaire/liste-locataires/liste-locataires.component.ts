@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AfficherListeUtilisateursService } from 'src/app/services/afficher-liste-utilisateurs.service';
+import {SupprimerLocataireService } from 'src/app/services/supprimer-locataire.service';
 
 @Component({
   selector: 'app-liste-locataires',
@@ -9,10 +10,12 @@ import { AfficherListeUtilisateursService } from 'src/app/services/afficher-list
 })
 export class ListeLocatairesComponent {
   listeLocataires: any;
+  erreur:any;
 
   constructor(
     private listeClientService: AfficherListeUtilisateursService,
-    private router: Router
+    private router: Router,
+    private supprimerLocataireService: SupprimerLocataireService
   ) {}
 
   ngOnInit() {
@@ -27,15 +30,17 @@ export class ListeLocatairesComponent {
     });
   }
 
-  // supprimerLocataire(id:number){
-  //   if(confirm("Voulez vous vraiment supprimer le compte de ce locataire")){
-  //     this.supprimerClientService.supprimerLocataire(id).subscribe({
-  //       next:(results)=>{
-  //       alert("Utilisateur supprimé");
+  supprimerLocataire(id:number){
+     if(confirm("Voulez vous vraiment supprimer le compte de ce locataire")){
+       this.supprimerLocataireService .supprimerLocataire(id).subscribe({
+        next:()=>{
+       alert("Utilisateur supprimé");
 
-  //       },error:(err)=>{
-  //         alert("Echec de la suppression");
-  //       }
-  //           })
-  //   }
+         },error:(err)=>{
+          alert("Echec de la suppression");
+          this.erreur=err.error;
+         }
+             })
+    }
+}
 }
