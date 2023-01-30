@@ -20,8 +20,6 @@ import { HttpClientModule } from '@angular/common/http';
     AccueilComponent,
     NavbarComponent,
     FooterComponent,
-    NavbarComponent,
-    AccueilComponent,
     LocataireAuthentificationComponent,
     ConcessionnaireAuthentificationComponent,
   ],
