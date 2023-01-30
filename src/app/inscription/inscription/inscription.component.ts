@@ -5,6 +5,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Pays } from 'src/app/model/Pays';
 import { PaysService } from 'src/app/services/pays.service';
+import { LienDeParenteService } from 'src/app/services/lien-de-parente.service';
 import { Locataire } from 'src/app/model/Locataire';
 import { HttpErrorResponse } from '@angular/common/http';
 
@@ -16,6 +17,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class InscriptionComponent {
   //attributs
   listePays: Pays[] = [];
+  listeLienDeParente: LienDeParente[] = [];
   erreurnom: string = '';
   erreurprenom: string = '';
   erreuremail: string = '';
@@ -29,6 +31,7 @@ export class InscriptionComponent {
 
   constructor(
     private paysService: PaysService,
+    private lienDeParenteService: LienDeParenteService,
     private locataireService: LocataireService,
     private router: Router
   ) {}
@@ -38,6 +41,7 @@ export class InscriptionComponent {
 
   ngOnInit() {
     this.getPays();
+    this.getLiendeParente();
   }
 
   //appeler la liste des pays
@@ -46,6 +50,21 @@ export class InscriptionComponent {
       for (let element of pays) {
         let pays = new Pays(element.code, element.nom);
         this.listePays.push(pays);
+      }
+    });
+  }
+
+  //test lien de parenté
+  getLiendeParente() {
+    this.lienDeParenteService.getLienDeParente().subscribe((liens) => {
+      console.log(liens);
+      for (let element of liens) {
+        let lien = new LienDeParente(
+          element.id,
+          element.nom,
+          element.coefficient
+        );
+        this.listeLienDeParente.push(lien);
       }
     });
   }

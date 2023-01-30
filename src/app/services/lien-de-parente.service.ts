@@ -7,12 +7,11 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root',
 })
 export class LienDeParenteService {
-
   constructor(private client: HttpClient) {}
 
-  getAnnonce(annonceId: number): Observable<LienDeParente> {
-    return this.client.get<LienDeParente>(
-      `http://localhost:8080/api/`
+  getLienDeParente(): Observable<LienDeParente[]> {
+    return this.client.get<LienDeParente[]>(
+      `http://localhost:8080/api/listeLienParente`
     );
   }
 }
