@@ -1,1 +1,20 @@
-<p>navbar works!</p>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">Acceuil</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/authentificationLocataire" routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact : true}">Authentification Locataire</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/authentificationConcessionnaire" routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact : true}">Authentification Concessionnaire</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/listeLocataire" routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact : true}">Liste des locataires</a>
+  </li>
+
+
+</ul>
