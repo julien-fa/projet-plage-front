@@ -11,8 +11,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { LocataireAuthentificationComponent } from './locataire-authentification/locataire-authentification.component';
 import { ConcessionnaireAuthentificationComponent } from './concessionnaire/liste-locataires/concessionnaire-authentification/concessionnaire-authentification.component';
 import { PROJET_ROUTING } from './app.routing';
-import{HttpClientModule} from'@angular/common/http';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,8 +30,7 @@ import{HttpClientModule} from'@angular/common/http';
     AppRoutingModule,
     PROJET_ROUTING,
     FormsModule,
-    HttpClientModule
-
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
