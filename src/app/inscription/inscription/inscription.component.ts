@@ -9,4 +9,9 @@ import { NgForm } from '@angular/forms';
 export class InscriptionComponent {
   //appeler la liste des pays
   //appeler lien de parente
+
+  //méthode de redirection
+  redirectionAccueil(){
+    
+  }
 }
