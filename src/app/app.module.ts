@@ -17,6 +17,8 @@ import { TokenInterceptorProvider } from './tokeninterceptor.interceptor';
 import { ListeLocatairesComponent } from './concessionnaire/liste-locataires/liste-locataires.component';
 import { AccueilconcessionnaireComponent } from './concessionnaire/accueil/accueilconcessionnaire/accueilconcessionnaire.component';
 import { NavbarConcessionnaireComponent } from './partials/navbar/navbar-concessionnaire/navbar-concessionnaire.component';
+import { ListeReservationComponent } from './concessionnaire/liste-reservation/liste-reservation.component';
+import { ListeReservationTraitementComponent } from './concessionnaire/liste-reservation-traitement/liste-reservation-traitement.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { NavbarConcessionnaireComponent } from './partials/navbar/navbar-concess
     ListeLocatairesComponent,
     AccueilconcessionnaireComponent,
     NavbarConcessionnaireComponent,
+    ListeReservationComponent,
+    ListeReservationTraitementComponent,
   ],
   imports: [
     BrowserModule,
