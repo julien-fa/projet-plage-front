@@ -23,7 +23,8 @@ this.authentificationService.authentifier(datas.value).subscribe({
 console.log(results);
 alert("Connexion effective");
 this.localService.saveData('idLocataire','jk1788');
-  
+//this.localService.saveData('id', results['id']);
+  console.log(results);
     console.log(sessionStorage.getItem('idLocataire'));
   }, error:(err)=>{
     this.erreur=err.error;
