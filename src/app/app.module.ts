@@ -15,7 +15,8 @@ import { CommonModule } from '@angular/common';
 import { LoginConcessionaireGuard } from './guard/login-concessionaire.guard';
 import { TokenInterceptorProvider } from './tokeninterceptor.interceptor';
 import { ListeLocatairesComponent } from './concessionnaire/liste-locataires/liste-locataires.component';
-
+import { AccueilconcessionnaireComponent } from './concessionnaire/accueil/accueilconcessionnaire/accueilconcessionnaire.component';
+import { NavbarConcessionnaireComponent } from './partials/navbar/navbar-concessionnaire/navbar-concessionnaire.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { ListeLocatairesComponent } from './concessionnaire/liste-locataires/lis
     FooterComponent,
     LocataireAuthentificationComponent,
     ConcessionnaireAuthentificationComponent,
-    ListeLocatairesComponent
+    ListeLocatairesComponent,
+    AccueilconcessionnaireComponent,
+    NavbarConcessionnaireComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,7 @@ import { ListeLocatairesComponent } from './concessionnaire/liste-locataires/lis
     PROJET_ROUTING,
     FormsModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
   ],
   providers: [LoginConcessionaireGuard, TokenInterceptorProvider],
   bootstrap: [AppComponent],
