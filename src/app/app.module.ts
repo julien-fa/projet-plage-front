@@ -19,6 +19,8 @@ import { AccueilconcessionnaireComponent } from './concessionnaire/accueil/accue
 import { NavbarConcessionnaireComponent } from './partials/navbar/navbar-concessionnaire/navbar-concessionnaire.component';
 import { ListeReservationComponent } from './concessionnaire/liste-reservation/liste-reservation.component';
 import { ListeReservationTraitementComponent } from './concessionnaire/liste-reservation-traitement/liste-reservation-traitement.component';
+import { ListeReservationLocataireComponent } from './liste-reservation-locataire/liste-reservation-locataire.component';
+
 
 @NgModule({
   declarations: [
@@ -32,8 +34,12 @@ import { ListeReservationTraitementComponent } from './concessionnaire/liste-res
     ListeLocatairesComponent,
     AccueilconcessionnaireComponent,
     NavbarConcessionnaireComponent,
+
     ListeReservationComponent,
     ListeReservationTraitementComponent,
+
+    ListeReservationLocataireComponent,
+
   ],
   imports: [
     BrowserModule,

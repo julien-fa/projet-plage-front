@@ -10,6 +10,13 @@ import { LocataireAuthentificationComponent } from './locataire-authentification
 import { InscriptionComponent } from './inscription/inscription/inscription.component';
 import { ListeReservationTraitementComponent } from './concessionnaire/liste-reservation-traitement/liste-reservation-traitement.component';
 import { ListeReservationComponent } from './concessionnaire/liste-reservation/liste-reservation.component';
+import { ListeReservationLocataireComponent } from './liste-reservation-locataire/liste-reservation-locataire.component';
+import { LoginLocataireGuard } from './guard/login-locataire.guard';
+
+
+
+
+
 
 const myRoutes: Routes = [
   { path: '', component: AccueilComponent },
@@ -18,6 +25,12 @@ const myRoutes: Routes = [
     component: LocataireAuthentificationComponent,
     canActivate: [LogoutGuard],
   },
+  {
+    path: 'reservationsLocataire',
+    component: ListeReservationLocataireComponent,
+    canActivate: [LoginLocataireGuard],
+  },
+
   {
     path: 'authentificationConcessionnaire',
     component: ConcessionnaireAuthentificationComponent,

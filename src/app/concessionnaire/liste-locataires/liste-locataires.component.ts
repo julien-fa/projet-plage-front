@@ -33,12 +33,13 @@ export class ListeLocatairesComponent {
   supprimerLocataire(id:number){
      if(confirm("Voulez vous vraiment supprimer le compte de ce locataire")){
        this.supprimerLocataireService .supprimerLocataire(id).subscribe({
-        next:()=>{
+        next:(result)=>{
        alert("Utilisateur supprimé");
-
+console.log(result);
          },error:(err)=>{
           alert("Echec de la suppression");
           this.erreur=err.error;
+          alert(this.erreur);
          }
              })
     }

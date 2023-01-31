@@ -11,6 +11,10 @@
     <a class="nav-link text-warning" routerLink="/authentificationLocataire" routerLinkActive="active"
       [routerLinkActiveOptions]="{exact : true}" >Authentification locataire</a>
   </li>
+  <li class="nav-item" *ngIf="localService.locataireConnecte()">
+    <a class="nav-link text-warning" routerLink="/reservationsLocataire" routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact : true}" >Reservations locataire</a>
+  </li>
   <li class="nav-item">
     <a class="nav-link text-warning" routerLink="/concessionnaire">Etes-vous un gestionnaire ?</a>
   </li>
