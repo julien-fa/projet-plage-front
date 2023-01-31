@@ -107,7 +107,7 @@ export class InscriptionComponent {
       );
       //console.log(locataireValide);
       this.locataireService.ajouterLocataire(locataireValide).subscribe({
-        next: () => this.router.navigate(['']),
+        next: () => this.router.navigate(['/authentificationLocataire']),
         error: (err) => this.gestionErreurs(err.error),
       });
     }
