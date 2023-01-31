@@ -1,8 +1,10 @@
+import { ModifierStatutLocationComponent } from './../modifier-statut-location/modifier-statut-location.component';
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { ListeLocationsStatutsService } from 'src/app/services/liste-locations-statuts.service';
 import { Location } from 'src/app/model/Location';
 import { Statut } from 'src/app/model/Statut';
+
 
 @Component({
   selector: 'app-liste-reservation-traitement',
@@ -44,6 +46,11 @@ export class ListeReservationTraitementComponent {
           console.log(this.listeLocations);
         }
       });
+  }
+
+  newStatut(location: Location) {
+    this.router.navigateByUrl('/modifier/statut', { state: location });
+    console.log(history.state);
   }
 
   //méthode ng on init

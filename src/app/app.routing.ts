@@ -1,3 +1,4 @@
+import { ModifierStatutLocationComponent } from './concessionnaire/modifier-statut-location/modifier-statut-location.component';
 import { AccueilconcessionnaireComponent } from './concessionnaire/accueil/accueilconcessionnaire/accueilconcessionnaire.component';
 
 import { RouterModule, Routes } from '@angular/router';
@@ -12,11 +13,6 @@ import { ListeReservationTraitementComponent } from './concessionnaire/liste-res
 import { ListeReservationComponent } from './concessionnaire/liste-reservation/liste-reservation.component';
 import { ListeReservationLocataireComponent } from './liste-reservation-locataire/liste-reservation-locataire.component';
 import { LoginLocataireGuard } from './guard/login-locataire.guard';
-
-
-
-
-
 
 const myRoutes: Routes = [
   { path: '', component: AccueilComponent },
@@ -51,6 +47,10 @@ const myRoutes: Routes = [
   {
     path: 'concessionnaire/liste-reservation',
     component: ListeReservationComponent,
+  },
+  {
+    path: 'modifier/statut',
+    component: ModifierStatutLocationComponent,
   },
 ];
 

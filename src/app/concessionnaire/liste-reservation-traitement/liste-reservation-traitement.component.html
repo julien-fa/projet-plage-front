@@ -18,7 +18,8 @@
       <td>{{location.montantAReglerEnEuros}}</td>
       <td>{{location.remarques}}</td>
       <td>{{location.statut.nom}}</td>
-      <td><button class="btn btn-success">Modifier le statut</button></td>
+      <!-- <td><button (click)="newStatut(location)" class="btn btn-success">Modifier le statut</button></td> -->
+      <td><a [routerLink]="['/modifier/statut']" class="btn btn-success" [state]="location">Modifier le statut</a></td>
     </tr>
   </tbody>
 </table>
