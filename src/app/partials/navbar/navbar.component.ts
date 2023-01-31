@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { LocalService } from 'src/app/services/local.service';
 
 @Component({
-  selector: 'app-navbar',
+  selector: 'app-navbar-classique',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })

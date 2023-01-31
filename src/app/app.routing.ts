@@ -1,3 +1,4 @@
+import { AccueilconcessionnaireComponent } from './concessionnaire/accueil/accueilconcessionnaire/accueilconcessionnaire.component';
 
 import { RouterModule, Routes } from "@angular/router";
 import { AccueilComponent } from "./accueil/accueil.component";
@@ -12,14 +13,27 @@ import { InscriptionComponent } from './inscription/inscription/inscription.comp
 
 
 
-const myRoutes:Routes=[
-{path:'', component:AccueilComponent},
-{path:'authentificationLocataire', component:LocataireAuthentificationComponent,canActivate:[LogoutGuard]},
-{path:'authentificationConcessionnaire', component:ConcessionnaireAuthentificationComponent, canActivate:[LogoutGuard]},
-{path:'listeLocataire', component:ListeLocatairesComponent, canActivate:[LoginConcessionaireGuard]},
-{path: 'listeLocataire', component: ListeLocatairesComponent },
-{path: 'inscription',component: InscriptionComponent},
-]
+const myRoutes: Routes = [
+  { path: '', component: AccueilComponent },
+  {
+    path: 'authentificationLocataire',
+    component: LocataireAuthentificationComponent,
+    canActivate: [LogoutGuard],
+  },
+  {
+    path: 'authentificationConcessionnaire',
+    component: ConcessionnaireAuthentificationComponent,
+    canActivate: [LogoutGuard],
+  },
+  {
+    path: 'listeLocataire',
+    component: ListeLocatairesComponent,
+    canActivate: [LoginConcessionaireGuard],
+  },
+  { path: 'listeLocataire', component: ListeLocatairesComponent },
+  { path: 'inscription', component: InscriptionComponent },
+  { path: 'concessionnaire', component: AccueilconcessionnaireComponent },
+];
 
 export let PROJET_ROUTING=RouterModule.forRoot(myRoutes);
 

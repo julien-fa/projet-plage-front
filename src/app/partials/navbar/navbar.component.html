@@ -8,23 +8,10 @@
       [routerLinkActiveOptions]="{exact : true}">Inscription locataire</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link text-warning" routerLink="/authentificationLocataire" routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact : true}" *ngIf="!localService.concessionnaireConnecte() && !localService.locataireConnecte()">Authentification Locataire</a>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link text-warning"routerLink="/authentificationConcessionnaire" routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact : true}" *ngIf="! localService.concessionnaireConnecte() && !localService.locataireConnecte()">Authentification Concessionnaire</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link text-warning" routerLink="/listeLocataire" routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact : true}" *ngIf="localService.concessionnaireConnecte()">Liste des locataires</a>
-  </li>
-  <li class="nav-item" *ngIf="localService.concessionnaireConnecte()">
-    <a class="nav-link text-warning" (click)="deconnexionConcessionnaire()">Deconnexion</a>
+    <a class="nav-link text-warning" routerLink="/concessionnaire">Etes-vous un gestionnaire ?</a>
   </li>
   <li class="nav-item" *ngIf="localService.locataireConnecte()">
-    <a class="nav-link text-warning" (click)="deconnexionLocataire()">Deconnexion</a>
+    <a class="nav-link text-warning" routerLinkActive="active" (click)="deconnexionLocataire()">Deconnexion</a>
 
   </li>
 
