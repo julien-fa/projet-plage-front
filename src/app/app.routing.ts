@@ -8,6 +8,8 @@ import { LoginConcessionaireGuard } from "./guard/login-concessionaire.guard";
 import { LogoutGuard } from "./guard/logout.guard";
 import { LocataireAuthentificationComponent } from "./locataire-authentification/locataire-authentification.component";
 import { InscriptionComponent } from './inscription/inscription/inscription.component';
+import { ListeReservationLocataireComponent } from './liste-reservation-locataire/liste-reservation-locataire.component';
+import { LoginLocataireGuard } from './guard/login-locataire.guard';
 
 
 
@@ -20,6 +22,12 @@ const myRoutes: Routes = [
     component: LocataireAuthentificationComponent,
     canActivate: [LogoutGuard],
   },
+  {
+    path: 'reservationsLocataire',
+    component: ListeReservationLocataireComponent,
+    canActivate: [LoginLocataireGuard],
+  },
+
   {
     path: 'authentificationConcessionnaire',
     component: ConcessionnaireAuthentificationComponent,

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthentificationLocataireService } from '../services/authentification-locataire.service';
 import { LocalService } from '../services/local.service';
 
@@ -12,20 +13,24 @@ import { LocalService } from '../services/local.service';
 
 export class LocataireAuthentificationComponent {
 
-  constructor(private authentificationService:AuthentificationLocataireService, private localService:LocalService){
+  constructor(private authentificationService:AuthentificationLocataireService, private localService:LocalService, private router:Router){
 
   }
   erreur:any;
 
 authentification(datas: any){
 this.authentificationService.authentifier(datas.value).subscribe({
-  next:(results)=>{
+  next:(results:any)=>{
 console.log(results);
 alert("Connexion effective");
-this.localService.saveData('idLocataire','jk1788');
-//this.localService.saveData('id', results['id']);
-  console.log(results);
-    console.log(sessionStorage.getItem('idLocataire'));
+this.localService.saveData('tokenLocataire','jk1788');
+this.localService.saveData('idLocataire', JSON.stringify(results.id));
+ // console.log(results.id);
+    //console.log(sessionStorage.getItem('idLocataire'));
+   // sessionStorage.setItem("id",results.id);
+  console.log('id locataire '+this.localService.getData('idLocataire'));
+this.router.navigateByUrl("/");
+
   }, error:(err)=>{
     this.erreur=err.error;
     datas.reset();

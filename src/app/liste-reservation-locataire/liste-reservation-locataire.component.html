@@ -1,0 +1,40 @@
+<app-navbar-classique></app-navbar-classique>
+<div class="container">
+
+
+
+    <table class="table table-dark">
+      <thead>
+        <tr class="table-active">
+          <th>id</th>
+          <th>début de la réservation</th>
+          <th>fin de la réservation</th>
+          <th>montant à régler</th>
+          <th>remarque</th>
+          <th>statut</th>
+          <th>liste de parasols</th>
+  
+        </tr>
+  
+      </thead>
+      <tbody>
+        <tr class="table-active" *ngFor="let reservation of listeReservations">
+          <td>{{reservation.id}}</td>
+          <td>{{reservation.dateHeureDebut |date :'medium'}}</td>
+          <td>{{reservation.dateHeureFin |date :'medium'}}</td>
+          <td>{{reservation.montantAReglerEnEuros | currency:'EUR':true}}</td>
+          <td>{{reservation.statut['nom']}}</td>
+          <td>{{reservation.liseParasol}}</td>
+        
+  
+  
+          <td>
+
+  
+  
+          </td>
+  
+        </tr>
+  
+      </tbody>
+    </table>

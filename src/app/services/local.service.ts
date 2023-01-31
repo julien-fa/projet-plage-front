@@ -40,7 +40,7 @@ public clearData(){
     else return false;
   }
   locataireConnecte(){
-    let token = sessionStorage.getItem('idLocataire');
+    let token = sessionStorage.getItem('tokenLocataire');
     if(token) return true;
     else return false;
   }
