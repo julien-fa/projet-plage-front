@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { SupprimerLocataireService } from './supprimer-locataire.service';
 
 describe('SupprimerLocataireService', () => {
@@ -8,6 +7,7 @@ describe('SupprimerLocataireService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({});
     service = TestBed.inject(SupprimerLocataireService);
+
   });
 
   it('should be created', () => {

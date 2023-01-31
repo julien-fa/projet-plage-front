@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LocalService } from 'src/app/services/local.service';
 import { AuthentificationConcessionnaireService } from '../../../services/authentification-concessionnaire.service';
 
 @Component({
@@ -9,7 +11,8 @@ import { AuthentificationConcessionnaireService } from '../../../services/authen
 })
 export class ConcessionnaireAuthentificationComponent {
 
-constructor(private authenService: AuthentificationConcessionnaireService){
+constructor(private authenService: AuthentificationConcessionnaireService, private localService: LocalService, 
+  private router:Router){
 
 }
 
@@ -20,6 +23,9 @@ this.authenService.authentifier(datas.value).subscribe({
     console.log(response);
    
     alert("Connexion effective");
+    this.localService.saveData('idConcessionnaire','jk123');
+  this.router.navigateByUrl("/listeLocataire")
+   console.log(sessionStorage.getItem('idConcessionnaire'));
   }, error:(err)=>{
     this.error=err.error;
     console.log(err);

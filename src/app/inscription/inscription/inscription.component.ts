@@ -106,6 +106,7 @@ export class InscriptionComponent {
         infos.lienDeParente
       );
       //console.log(locataireValide);
+      //ajouter alert() pour confirmer l'inscription
       this.locataireService.ajouterLocataire(locataireValide).subscribe({
         next: () => this.router.navigate(['/authentificationLocataire']),
         error: (err) => this.gestionErreurs(err.error),

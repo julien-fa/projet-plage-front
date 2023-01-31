@@ -8,11 +8,10 @@ export class SupprimerLocataireService {
 
   constructor(private httpClient:HttpClient) { }
 
-url="http://localhost:8080";
-
-
-supprimerLocataire(id:number){
-  return this.httpClient.delete(this.url+"/supprimerLocataire/"+id);
-}
+  
+  url="http://localhost:8080"
+  supprimerLocataire(id:number){
+    return this.httpClient.delete(this.url+"/supprimerLocataire/"+id);
+  }
 
 }
