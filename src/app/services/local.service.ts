@@ -35,7 +35,7 @@ public clearData(){
 
 
   concessionnaireConnecte(){
-    let token = sessionStorage.getItem('idConcessionnaire');
+    let token = sessionStorage.getItem('tokenConcessionnaire');
     if(token) return true;
     else return false;
   }

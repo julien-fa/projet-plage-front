@@ -29,7 +29,7 @@ this.localService.saveData('idLocataire', JSON.stringify(results.id));
     //console.log(sessionStorage.getItem('idLocataire'));
    // sessionStorage.setItem("id",results.id);
   console.log('id locataire '+this.localService.getData('idLocataire'));
-this.router.navigateByUrl("/");
+this.router.navigateByUrl("/reservationsLocataire");
 
   }, error:(err)=>{
     this.erreur=err.error;

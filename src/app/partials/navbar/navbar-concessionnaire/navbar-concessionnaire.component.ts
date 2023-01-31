@@ -12,9 +12,11 @@ export class NavbarConcessionnaireComponent {
 
 
   deconnexionConcessionnaire() {
-    confirm('Etes-vous sur de vouloir vous déconnecter');
-    this.localService.removeData('idConcessionnaire');
+   if( confirm('Etes-vous sur de vouloir vous déconnecter')){
+    this.localService.clearData();
 
     this.router.navigateByUrl('/');
+   }
+   
   }
 }

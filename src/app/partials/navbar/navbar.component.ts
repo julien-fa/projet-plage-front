@@ -15,17 +15,13 @@ constructor(protected localService:LocalService, private router:Router){
 
 
 deconnexionLocataire(){
-  confirm("Etes-vous sur de vouloir vous déconnecter");
- //this.localService.removeData("idLocataire");
- this.localService.clearData();
-  this.router.navigateByUrl('/');
+  if( confirm('Etes-vous sur de vouloir vous déconnecter')){
+    this.localService.clearData();
+
+    this.router.navigateByUrl('/');
+   }
 }
 
-deconnexionConcessionnaire(){
-  confirm("Etes-vous sur de vouloir vous déconnecter");
-  this.localService.clearData();
 
-  this.router.navigateByUrl('/');
-}
 
 }

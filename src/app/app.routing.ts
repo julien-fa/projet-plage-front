@@ -20,38 +20,23 @@ import { LoginLocataireGuard } from './guard/login-locataire.guard';
 
 const myRoutes: Routes = [
   { path: '', component: AccueilComponent },
-  {
-    path: 'authentificationLocataire',
-    component: LocataireAuthentificationComponent,
-    canActivate: [LogoutGuard],
-  },
-  {
-    path: 'reservationsLocataire',
-    component: ListeReservationLocataireComponent,
-    canActivate: [LoginLocataireGuard],
-  },
-
-  {
-    path: 'authentificationConcessionnaire',
-    component: ConcessionnaireAuthentificationComponent,
-    canActivate: [LogoutGuard],
-  },
-  {
-    path: 'listeLocataire',
-    component: ListeLocatairesComponent,
-    canActivate: [LoginConcessionaireGuard],
-  },
-  { path: 'listeLocataire', component: ListeLocatairesComponent },
   { path: 'inscription', component: InscriptionComponent },
-  { path: 'concessionnaire', component: AccueilconcessionnaireComponent },
-  {
-    path: 'concessionnaire/liste-location/traitement',
-    component: ListeReservationTraitementComponent,
-  },
-  {
-    path: 'concessionnaire/liste-reservation',
-    component: ListeReservationComponent,
-  },
+  {path: 'authentificationLocataire',component: LocataireAuthentificationComponent,canActivate: [LogoutGuard],},
+  {path: 'reservationsLocataire',component: ListeReservationLocataireComponent,canActivate: [LoginLocataireGuard]},
+
+  
+
+
+  //{ path: 'listeLocataire', component: ListeLocatairesComponent },
+  
+
+ 
+  { path: 'concessionnaire', component: AccueilconcessionnaireComponent},
+  {path: 'authentificationConcessionnaire',component: ConcessionnaireAuthentificationComponent,canActivate: [LogoutGuard],},
+  { path: 'listeLocataire',component: ListeLocatairesComponent,canActivate: [LoginConcessionaireGuard],},
+  {path: 'concessionnaire/liste-location/traitement',component: ListeReservationTraitementComponent, canActivate: [LoginConcessionaireGuard],},
+  {path: 'concessionnaire/liste-reservation',component: ListeReservationComponent, canActivate: [LoginConcessionaireGuard],},
+
 ];
 
 export let PROJET_ROUTING = RouterModule.forRoot(myRoutes);
