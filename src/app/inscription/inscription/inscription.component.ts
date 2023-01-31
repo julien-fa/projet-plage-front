@@ -108,8 +108,13 @@ export class InscriptionComponent {
       //console.log(locataireValide);
       //ajouter alert() pour confirmer l'inscription
       this.locataireService.ajouterLocataire(locataireValide).subscribe({
-        next: () => this.router.navigate(['/authentificationLocataire']),
-        error: (err) => this.gestionErreurs(err.error),
+        next: () => {
+          this.router.navigate(['/authentificationLocataire']);
+          alert('Votre inscription a été confirmée.');
+        },
+        error: (err) => {
+          this.gestionErreurs(err.error);
+        },
       });
     }
   }
