@@ -1,0 +1,22 @@
+<app-navbar-concessionnaire></app-navbar-concessionnaire>
+<h2>Liste des réservation à traîter</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Date de début</th>
+      <th scope="col">Date de fin</th>
+      <th scope="col">Montant à régler</th>
+      <th scope="col">Remarques</th>
+      <th scope="col">Statut</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let location of listeLocations">
+      <td>{{location.dateHeureDebut | date}}</td>
+      <td>{{location.dateHeureFin | date}}</td>
+      <td>{{location.montantAReglerEnEuros}}</td>
+      <td>{{location.remarques}}</td>
+      <td>{{location.statut.nom}}</td>
+    </tr>
+  </tbody>
+</table>

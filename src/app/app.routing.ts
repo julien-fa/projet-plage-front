@@ -8,6 +8,7 @@ import { LoginConcessionaireGuard } from "./guard/login-concessionaire.guard";
 import { LogoutGuard } from "./guard/logout.guard";
 import { LocataireAuthentificationComponent } from "./locataire-authentification/locataire-authentification.component";
 import { InscriptionComponent } from './inscription/inscription/inscription.component';
+import { ListeReservationTraitementComponent } from './concessionnaire/liste-reservation-traitement/liste-reservation-traitement.component';
 
 
 
@@ -33,6 +34,10 @@ const myRoutes: Routes = [
   { path: 'listeLocataire', component: ListeLocatairesComponent },
   { path: 'inscription', component: InscriptionComponent },
   { path: 'concessionnaire', component: AccueilconcessionnaireComponent },
+  {
+    path: 'concessionnaire/liste-location/traitement',
+    component: ListeReservationTraitementComponent,
+  },
 ];
 
 export let PROJET_ROUTING=RouterModule.forRoot(myRoutes);
