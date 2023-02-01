@@ -1,3 +1,4 @@
+import { ModifierStatutLocationComponent } from './concessionnaire/modifier-statut-location/modifier-statut-location.component';
 import { AccueilconcessionnaireComponent } from './concessionnaire/accueil/accueilconcessionnaire/accueilconcessionnaire.component';
 
 import { RouterModule, Routes } from '@angular/router';
@@ -13,30 +14,48 @@ import { ListeReservationComponent } from './concessionnaire/liste-reservation/l
 import { ListeReservationLocataireComponent } from './liste-reservation-locataire/liste-reservation-locataire.component';
 import { LoginLocataireGuard } from './guard/login-locataire.guard';
 
-
-
-
-
-
 const myRoutes: Routes = [
   { path: '', component: AccueilComponent },
   { path: 'inscription', component: InscriptionComponent },
-  {path: 'authentificationLocataire',component: LocataireAuthentificationComponent,canActivate: [LogoutGuard],},
-  {path: 'reservationsLocataire',component: ListeReservationLocataireComponent,canActivate: [LoginLocataireGuard]},
 
-  
-
+  {
+    path: 'authentificationLocataire',
+    component: LocataireAuthentificationComponent,
+    canActivate: [LogoutGuard],
+  },
+  {
+    path: 'reservationsLocataire',
+    component: ListeReservationLocataireComponent,
+    canActivate: [LoginLocataireGuard],
+  },
 
   //{ path: 'listeLocataire', component: ListeLocatairesComponent },
-  
 
- 
-  { path: 'concessionnaire', component: AccueilconcessionnaireComponent},
-  {path: 'authentificationConcessionnaire',component: ConcessionnaireAuthentificationComponent,canActivate: [LogoutGuard],},
-  { path: 'listeLocataire',component: ListeLocatairesComponent,canActivate: [LoginConcessionaireGuard],},
-  {path: 'concessionnaire/liste-location/traitement',component: ListeReservationTraitementComponent, canActivate: [LoginConcessionaireGuard],},
-  {path: 'concessionnaire/liste-reservation',component: ListeReservationComponent, canActivate: [LoginConcessionaireGuard],},
-
+  { path: 'concessionnaire', component: AccueilconcessionnaireComponent },
+  {
+    path: 'authentificationConcessionnaire',
+    component: ConcessionnaireAuthentificationComponent,
+    canActivate: [LogoutGuard],
+  },
+  {
+    path: 'listeLocataire',
+    component: ListeLocatairesComponent,
+    canActivate: [LoginConcessionaireGuard],
+  },
+  {
+    path: 'concessionnaire/liste-location/traitement',
+    component: ListeReservationTraitementComponent,
+    canActivate: [LoginConcessionaireGuard],
+  },
+  {
+    path: 'concessionnaire/liste-reservation',
+    component: ListeReservationComponent,
+    canActivate: [LoginConcessionaireGuard],
+  },
+  {
+    path: 'modifier/statut',
+    component: ModifierStatutLocationComponent,
+  },
 ];
 
 export let PROJET_ROUTING = RouterModule.forRoot(myRoutes);

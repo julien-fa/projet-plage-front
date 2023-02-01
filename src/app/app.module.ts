@@ -20,6 +20,7 @@ import { NavbarConcessionnaireComponent } from './partials/navbar/navbar-concess
 import { ListeReservationComponent } from './concessionnaire/liste-reservation/liste-reservation.component';
 import { ListeReservationTraitementComponent } from './concessionnaire/liste-reservation-traitement/liste-reservation-traitement.component';
 import { ListeReservationLocataireComponent } from './liste-reservation-locataire/liste-reservation-locataire.component';
+import { ModifierStatutLocationComponent } from './concessionnaire/modifier-statut-location/modifier-statut-location.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { ListeReservationLocataireComponent } from './liste-reservation-locatair
     ListeReservationTraitementComponent,
 
     ListeReservationLocataireComponent,
+      ModifierStatutLocationComponent,
 
   ],
   imports: [
