@@ -55,6 +55,7 @@ const myRoutes: Routes = [
   {
     path: 'modifier/statut',
     component: ModifierStatutLocationComponent,
+    canActivate: [LoginConcessionaireGuard],
   },
 ];
 
