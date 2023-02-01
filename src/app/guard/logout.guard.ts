@@ -1,24 +1,30 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import {
+  ActivatedRouteSnapshot,
+  CanActivate,
+  RouterStateSnapshot,
+  UrlTree,
+} from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LogoutGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    state: RouterStateSnapshot
+  ):
+    | Observable<boolean | UrlTree>
+    | Promise<boolean | UrlTree>
+    | boolean
+    | UrlTree {
+    let token = sessionStorage.getItem('tokenConcessionnaire');
+    let token2 = sessionStorage.getItem('tokenLocataire');
 
-  
-  
-       let token= sessionStorage.getItem('tokenConcessionnaire');
-       let token2= sessionStorage.getItem('tokenLocataire');
+    //console.log(token);
 
-    console.log(token);
-
-    if(token || token2) return false;
+    if (token || token2) return false;
     else return true;
   }
-  
 }

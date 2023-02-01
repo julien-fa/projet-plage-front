@@ -57,7 +57,7 @@ export class InscriptionComponent {
   //test lien de parenté
   getLiendeParente() {
     this.lienDeParenteService.getLienDeParente().subscribe((liens) => {
-      console.log(liens);
+      //console.log(liens);
       for (let element of liens) {
         let lien = new LienDeParente(
           element.id,
@@ -73,7 +73,7 @@ export class InscriptionComponent {
 
   verificationValidations(formLogin: NgForm) {
     let infos = formLogin.value;
-    console.log(infos);
+    //console.log(infos);
 
     if (infos.nom == '' || infos.nom == null) {
       this.erreurnom = 'Le champ nom est vide ou invalide';

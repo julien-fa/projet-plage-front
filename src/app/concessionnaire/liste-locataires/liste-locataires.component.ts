@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AfficherListeUtilisateursService } from 'src/app/services/afficher-liste-utilisateurs.service';
-import {SupprimerLocataireService } from 'src/app/services/supprimer-locataire.service';
+import { SupprimerLocataireService } from 'src/app/services/supprimer-locataire.service';
 
 @Component({
   selector: 'app-liste-locataires',
@@ -10,7 +10,7 @@ import {SupprimerLocataireService } from 'src/app/services/supprimer-locataire.s
 })
 export class ListeLocatairesComponent {
   listeLocataires: any;
-  erreur:any;
+  erreur: any;
 
   constructor(
     private listeClientService: AfficherListeUtilisateursService,
@@ -22,7 +22,7 @@ export class ListeLocatairesComponent {
     this.listeClientService.recupererLocataire().subscribe({
       next: (results) => {
         this.listeLocataires = results;
-        console.log(this.listeLocataires);
+        //console.log(this.listeLocataires);
       },
       error: (err) => {
         alert('Erreur lors de la récupération des clients');
@@ -30,18 +30,19 @@ export class ListeLocatairesComponent {
     });
   }
 
-  supprimerLocataire(id:number){
-     if(confirm("Voulez vous vraiment supprimer le compte de ce locataire")){
-       this.supprimerLocataireService .supprimerLocataire(id).subscribe({
-        next:(result)=>{
-       alert("Utilisateur supprimé");
-console.log(result);
-         },error:(err)=>{
-          alert("Echec de la suppression");
-          this.erreur=err.error;
+  supprimerLocataire(id: number) {
+    if (confirm('Voulez vous vraiment supprimer le compte de ce locataire')) {
+      this.supprimerLocataireService.supprimerLocataire(id).subscribe({
+        next: (result) => {
+          alert('Utilisateur supprimé');
+          //console.log(result);
+        },
+        error: (err) => {
+          alert('Echec de la suppression');
+          this.erreur = err.error;
           alert(this.erreur);
-         }
-             })
+        },
+      });
     }
-}
+  }
 }

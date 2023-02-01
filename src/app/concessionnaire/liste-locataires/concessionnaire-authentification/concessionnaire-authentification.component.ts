@@ -11,7 +11,7 @@ import { AuthentificationConcessionnaireService } from '../../../services/authen
 })
 export class ConcessionnaireAuthentificationComponent {
 
-constructor(private authenService: AuthentificationConcessionnaireService, private localService: LocalService, 
+constructor(private authenService: AuthentificationConcessionnaireService, private localService: LocalService,
   private router:Router){
 
 }
@@ -20,15 +20,15 @@ error:any;
 authentification(datas:any){
 this.authenService.authentifier(datas.value).subscribe({
   next:(response:any)=>{
-    console.log(response);
-   
+    //console.log(response);
+
     alert("Connexion effective");
     this.localService.saveData('tokenConcessionnaire','jk123');
   this.router.navigateByUrl("/listeLocataire")
-   console.log(sessionStorage.getItem('idConcessionnaire'));
+  // console.log(sessionStorage.getItem('idConcessionnaire'));
   }, error:(err)=>{
     this.error=err.error;
-    console.log(err);
+    //console.log(err);
     datas.reset();
   }
 })

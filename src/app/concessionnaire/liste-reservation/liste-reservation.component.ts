@@ -22,7 +22,7 @@ export class ListeReservationComponent {
     this.listeLocationAllService
       .recupererListLocation()
       .subscribe((locations) => {
-        console.log(locations);
+        //console.log(locations);
         for (let element of locations) {
           this.arrElements = [];
           for (const [key, value] of Object.entries(element)) {
@@ -30,7 +30,7 @@ export class ListeReservationComponent {
           }
           //récupérer un tableau de valeurs
           let item = this.arrElements;
-          console.log(item);
+          //console.log(item);
           let statut: Statut = new Statut(item[7].id, item[7].nom);
 
           let location = new Location(

@@ -24,7 +24,7 @@ export class ListeReservationTraitementComponent {
     this.listeLocationAtraiterService
       .recupererListLocationATraiter()
       .subscribe((locations) => {
-        console.log(locations);
+        //console.log(locations);
         for (let element of locations) {
           this.arrElements = [];
           for (const [key, value] of Object.entries(element)) {
@@ -43,14 +43,14 @@ export class ListeReservationTraitementComponent {
             statut
           );
           this.listeLocations.push(location);
-          console.log(this.listeLocations);
+          //console.log(this.listeLocations);
         }
       });
   }
 
   newStatut(location: Location) {
     this.router.navigateByUrl('/modifier/statut', { state: location });
-    console.log(history.state);
+    //console.log(history.state);
   }
 
   //méthode ng on init

@@ -21,20 +21,20 @@ export class LocataireAuthentificationComponent {
 authentification(datas: any){
 this.authentificationService.authentifier(datas.value).subscribe({
   next:(results:any)=>{
-console.log(results);
+//console.log(results);
 alert("Connexion effective");
 this.localService.saveData('tokenLocataire','jk1788');
 this.localService.saveData('idLocataire', JSON.stringify(results.id));
  // console.log(results.id);
     //console.log(sessionStorage.getItem('idLocataire'));
    // sessionStorage.setItem("id",results.id);
-  console.log('id locataire '+this.localService.getData('idLocataire'));
+  //console.log('id locataire '+this.localService.getData('idLocataire'));
 this.router.navigateByUrl("/reservationsLocataire");
 
   }, error:(err)=>{
     this.erreur=err.error;
     datas.reset();
-    console.log(err);
+    //console.log(err);
   }
 })
 }

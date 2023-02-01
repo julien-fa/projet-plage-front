@@ -9,12 +9,12 @@ export class LoginLocataireGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-   
+
       let token= sessionStorage.getItem('tokenLocataire');
-    console.log(token);
+    //console.log(token);
 
     if(token) return true;
     else return false;
   }
-  
+
 }

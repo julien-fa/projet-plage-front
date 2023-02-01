@@ -35,6 +35,6 @@ export class ModifierStatutLocationComponent {
   //méthode à terminer
   changerStatut(formStatut: NgForm) {
     let infos = formStatut.value;
-    console.log(infos);
+    //console.log(infos);
   }
 }
