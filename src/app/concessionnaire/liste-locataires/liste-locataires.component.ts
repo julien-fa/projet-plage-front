@@ -35,6 +35,7 @@ export class ListeLocatairesComponent {
       this.supprimerLocataireService.supprimerLocataire(id).subscribe({
         next: (result) => {
           alert('Utilisateur supprimé');
+          location.reload();
           //console.log(result);
         },
         error: (err) => {
